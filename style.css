@@ -8,6 +8,23 @@ html, body {
     height: 100%;
     font-family: 'Poppins', sans-serif;
 }
+/* Styles pour la barre de défilement dans les navigateurs basés sur WebKit (Chrome, Safari) */
+html::-webkit-scrollbar {
+    width: 8px; /* Largeur de la barre de défilement */
+    height: 8px; /* Épaisseur de la barre de défilement horizontale */
+}
+
+/* Fond de la barre de défilement */
+html::-webkit-scrollbar-track {
+    background: rgb(2,5,24); /* Fond transparent */
+}
+
+/* Style du pouce de la barre de défilement */
+html::-webkit-scrollbar-thumb {
+    background: rgba(136, 136, 136, 0.7); /* Couleur du pouce */
+    border-radius: 10px; /* Coins arrondis */
+}
+
 
 .main {
     height: 100vh;
@@ -32,6 +49,8 @@ html, body {
 
 .card {
     height: 60%;
+    max-height: 60%;
+    overflow-y: auto;
     width: 50%;
     background-color: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
@@ -50,13 +69,37 @@ html, body {
     transform: translateY(-20%) scale(1.015);
 }
 
+/* Styles pour la barre de défilement */
+.card::-webkit-scrollbar {
+    width: 8px; /* Largeur de la barre de défilement */
+    height: 8px; /* Épaisseur de la barre de défilement horizontale */
+}
+
+.card::-webkit-scrollbar-track {
+    background: transparent; /* Rendre le fond de la barre de défilement transparent */
+}
+
+.card::-webkit-scrollbar-thumb {
+    background: #888; /* Couleur du "pouce" de la barre de défilement */
+    border-radius: 10px; /* Coins arrondis du pouce */
+    margin-left: 4px;
+}
+
+.card::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Couleur du pouce au survol */
+}
+
 #pfp {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     object-fit: cover;
     box-shadow: 0 4px 15px rgba(255, 255, 255, .6);
+    transition: all 0.4s;
+}
 
+#pfp:hover {
+    transform: scale(1.1);
 }
 
 .project {
@@ -70,7 +113,7 @@ html, body {
     padding: 15px;
     text-align: left;
     font-size: 18px;
-    line-height: 1.6;
+    line-height: 1.5;
     margin: 15px;
     color: #333; /* Couleur de texte douce pour lisibilité */
     width: 90%;
@@ -100,4 +143,46 @@ html, body {
 .language-buttons button:hover {
     background-color: #333;
     transform: scale(1.2);
+}
+
+.socials {
+    background-color: #646464; /* Fond gris sombre */
+    border-radius: 15px; /* Coins arrondis */
+    margin: 0px auto;
+    max-width: 50%; /* Largeur maximale de la carte */
+    overflow: hidden; /* Pour s'assurer que le contenu ne déborde pas */
+    box-shadow: 0 4px 15px rgba(5, 12, 63, 0.4); /* Ombre pour donner de la profondeur */
+    transition: transform 0.5s ease;
+}
+
+.socials:hover {
+    transform: rotateY(25deg) rotateX(25deg) scale(1.05); /* Rotation 3D au survol */
+    box-shadow: 0 8px 20px rgba(5, 12, 63, 0.6);
+}
+
+.banner {
+    width: auto; /* La bannière remplit toute la largeur */
+    height: auto; /* Hauteur automatique pour garder le ratio */
+}
+
+.social-buttons {
+    background-color: #313131; /* Fond un peu plus sombre pour la barre des boutons */
+    border-radius: 0 0 15px 15px; /* Coins arrondis en bas */
+    display: flex; /* Flexbox pour aligner les boutons */
+    justify-content: center; /* Centre les boutons */
+    padding: 10px 0; /* Espacement en haut et en bas */
+}
+
+.social-button {
+    margin: 0 10px; /* Espacement entre les boutons */
+}
+
+.social-button img {
+    width: 40px; /* Largeur de chaque icône */
+    height: 40px; /* Hauteur de chaque icône */
+    transition: transform 0.3s; /* Effet de transition */
+}
+
+.social-button img:hover {
+    transform: scale(1.2); /* Agrandissement au survol */
 }
