@@ -146,43 +146,194 @@ html::-webkit-scrollbar-thumb {
 }
 
 .socials {
-    background-color: #646464; /* Fond gris sombre */
-    border-radius: 15px; /* Coins arrondis */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 300px;
     margin: 0px auto;
-    max-width: 50%; /* Largeur maximale de la carte */
-    overflow: hidden; /* Pour s'assurer que le contenu ne déborde pas */
-    box-shadow: 0 4px 15px rgba(5, 12, 63, 0.4); /* Ombre pour donner de la profondeur */
-    transition: transform 0.5s ease;
+    max-width: 90%; /* Ajustement de la largeur pour les petits écrans */
 }
 
-.socials:hover {
-    transform: rotateY(25deg) rotateX(25deg) scale(1.05); /* Rotation 3D au survol */
-    box-shadow: 0 8px 20px rgba(5, 12, 63, 0.6);
+@import url('https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap');
+
+/* Style du h1 avec effet néon */
+.socials h1 {
+    font-family: 'Neonderthaw', cursive; /* Utilisation de la police Monoton */
+    font-size: 60px; /* Taille du texte */
+    letter-spacing: 8px; /* Espace entre les lettres pour un effet plus espacé */
+    font-weight: normal;
+    margin-top: 5em;
+    color: #ff007f; /* Rose vif pour la couleur du texte */
+    text-shadow: 
+        0 0 5px #ff007f,
+        0 0 10px #ff007f,
+        0 0 20px #ff007f,
+        0 0 40px #ff007f,
+        0 0 80px #ff00ff,
+        0 0 90px #ff00ff,
+        0 0 100px #ff00ff;
+    text-align: center;
+    animation: neon-glow 1.5s ease-in-out infinite alternate;
+    white-space: nowrap; /* Empêche le texte de passer à la ligne */
 }
 
-.banner {
-    width: auto; /* La bannière remplit toute la largeur */
-    height: auto; /* Hauteur automatique pour garder le ratio */
+/* Responsive design pour téléphones et petits écrans */
+@media (max-width: 600px) {
+    .socials h1 {
+        font-size: 40px; /* Taille du texte réduite pour les petits écrans */
+        letter-spacing: 4px; /* Moins d'espacement pour éviter que le texte dépasse */
+    }
 }
 
-.social-buttons {
-    background-color: #313131; /* Fond un peu plus sombre pour la barre des boutons */
-    border-radius: 0 0 15px 15px; /* Coins arrondis en bas */
-    display: flex; /* Flexbox pour aligner les boutons */
-    justify-content: center; /* Centre les boutons */
-    padding: 10px 0; /* Espacement en haut et en bas */
+/* Animation pour l'effet de brillance */
+@keyframes neon-glow {
+    from {
+        text-shadow: 
+            0 0 5px #ff007f,
+            0 0 10px #ff007f,
+            0 0 20px #ff007f,
+            0 0 40px #ff007f,
+            0 0 80px #ff00ff,
+            0 0 90px #ff00ff,
+            0 0 100px #ff00ff;
+    }
+    to {
+        text-shadow: 
+            0 0 10px #ff00ff,
+            0 0 20px #ff00ff,
+            0 0 30px #ff00ff,
+            0 0 60px #ff00ff,
+            0 0 100px #ff00ff,
+            0 0 110px #ff007f,
+            0 0 120px #ff007f;
+    }
 }
 
-.social-button {
-    margin: 0 10px; /* Espacement entre les boutons */
+.socials_card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
 }
-
-.social-button img {
-    width: 40px; /* Largeur de chaque icône */
-    height: 40px; /* Hauteur de chaque icône */
-    transition: transform 0.3s; /* Effet de transition */
+  
+.up {
+    margin-top: 5em;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
 }
-
-.social-button img:hover {
-    transform: scale(1.2); /* Agrandissement au survol */
+  
+.down {
+    margin-top: 0.5em;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+}
+  
+.card1 {
+    width: 90px;
+    height: 90px;
+    outline: none;
+    border: none;
+    background: white;
+    border-radius: 90px 5px 5px 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    transition: .2s ease-in-out;
+}
+  
+.instagram {
+    margin-top: 1.5em;
+    margin-left: 1.2em;
+    fill: #cc39a4;
+}
+  
+.card2 {
+    width: 90px;
+    height: 90px;
+    outline: none;
+    border: none;
+    background: white;
+    border-radius: 5px 90px 5px 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    transition: .2s ease-in-out;
+}
+  
+.twitter {
+    margin-top: 1.5em;
+    margin-left: -.9em;
+    fill: #03A9F4;
+}
+  
+.card3 {
+    width: 90px;
+    height: 90px;
+    outline: none;
+    border: none;
+    background: white;
+    border-radius: 5px 5px 5px 90px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    transition: .2s ease-in-out;
+}
+  
+.telegram {
+    margin-top: -.6em;
+    margin-left: 1.2em;
+    fill: #03A9F4;
+}
+  
+.card4 {
+    width: 90px;
+    height: 90px;
+    outline: none;
+    border: none;
+    background: white;
+    border-radius: 5px 5px 90px 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    transition: .2s ease-in-out;
+}
+  
+.discord {
+    margin-top: -.9em;
+    margin-left: -1.2em;
+    fill: #8c9eff;
+}
+  
+.card1:hover {
+    cursor: pointer;
+    scale: 1.1;
+    background-color: #cc39a4;
+}
+  
+.card1:hover .instagram {
+    fill: white;
+}
+  
+.card2:hover {
+    cursor: pointer;
+    scale: 1.1;
+    background-color: #03A9F4;
+}
+  
+.card2:hover .twitter {
+    fill: white;
+}
+  
+.card3:hover {
+    cursor: pointer;
+    scale: 1.1;
+    background-color: rgb(13, 178, 255);
+}
+  
+.card3:hover .telegram {
+    fill: white;
+}
+  
+.card4:hover {
+    cursor: pointer;
+    scale: 1.1;
+    background-color: #8c9eff;
+}
+  
+.card4:hover .discord {
+    fill: white;
 }
